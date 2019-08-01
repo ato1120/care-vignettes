@@ -212,9 +212,12 @@ div.box{
   margin-right: auto;
   width: 50%;
 }
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
 </script><tw-passagedata pid="1" name="begin" tags="start" position="101,101" size="100,100">(set: $surveyLink to &quot;https://qtrial2019q2az1.az1.qualtrics.com/jfe/form/SV_d4IRWXpS7QYWbPv&quot;) 
 (set: $q1 to &quot;&quot;)
+(set: $q2 to &quot;&quot;) 
 
 &lt;!--
 Set all variables you wish to send to survey at start of story.
@@ -279,7 +282,7 @@ You look down at your phone and notice the email icon had appeared along with th
 &lt;audio src=&quot;https://vocaroo.com/i/s0VgJHRAaiIA&quot; autoplay&gt; </tw-passagedata><tw-passagedata pid="7" name=" story6" tags="dorm" position="701,401" size="100,100">&lt;div class=&quot;box&quot;&gt;
 You look back up at Alex who had moved from the couch to kitchen. He was dipping a spoon into a peanut butter jar and smearing the peanut butter onto a peeled banana. 
 
-[[Several hours later... -&gt; story7]]
+[[Several days later... -&gt; story7]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name=" story7" tags="cafe" position="500,401" size="100,100">
 &lt;div class=&quot;box&quot;&gt;
 You pick up the pace as you reach the door to the cafe. People exiting brush past, and you notice the place is fully packed. Tables are full and noise is bustling as you scan the room, looking for your peers. Out of the corner of your eye, you see a hand waving and it’s not long before you realize the hand is waving at you. It’s Robert, one of the lab members. you recognize the faces of the rest of the lab as you steadily walk over to their table, slipping and weaving past occupied chairs and other customers patrolling the space. 
@@ -354,10 +357,11 @@ You get a text from your roommate:
 &lt;!--Use macros and variables to set up survey questions. Send variable q1 to survey at end of story.--!&gt;</tw-passagedata><tw-passagedata pid="18" name="story13" tags="cafe" position="550,899" size="100,100">&lt;div class=&quot;box&quot;&gt;
 The rest of the lunch goes by fairly quickly. You learn the last member of your lab, Mia is going to be using his degree to help with her family business, creating a website for their real estate company. You all walk to the bus stop together before parting ways. 
 
-(set: $surveyLink to it +&quot;?q1=&quot; + (text:$q1))
+(set: $q2 to &quot;test&quot;)
+(set: $surveyLink to it +&quot;?q1=&quot; + (text:$q1) + &quot;&amp;q2&quot; + (text:$q2))
 
 [[Finish. -&gt; end]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name=" end" tags="" position="550,1049" size="100,100">(link: “End.”)
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name=" end" tags="" position="404,900" size="100,100">(link: “End.”)
 [(goto-url: $surveyLink)] 
 </tw-passagedata><tw-passagedata pid="20" name=" story4.1" tags="dorm" position="824,200" size="100,100">&lt;div class=&quot;box&quot;&gt;
 You add on, “I think I’m gonna make something to eat and then later I have a meeting with my lab.”
