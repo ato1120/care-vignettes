@@ -89,10 +89,14 @@ div.speaker {
   display: inline;
 }
 
+tw-sidebar {
+ display: none;  
+}
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
 
 
-</script><tw-tag name="alarm" color="green"></tw-tag>,<tw-tag name="bus" color="purple"></tw-tag>,<tw-tag name="cafe" color="red"></tw-tag>,<tw-tag name="campus" color="green"></tw-tag>,<tw-tag name="dorm" color="blue"></tw-tag>,<tw-tag name="hallway" color="yellow"></tw-tag><tw-passagedata pid="1" name="New Welcome" tags="start" position="50,175" size="100,100">(set: $surveyLink to &quot; http://cmu.ca1.qualtrics.com/jfe/form/SV_4YqKtbgVmtbZiyV &quot;) 
+</script><tw-tag name="alarm" color="green"></tw-tag>,<tw-tag name="bus" color="purple"></tw-tag>,<tw-tag name="cafe" color="red"></tw-tag>,<tw-tag name="campus" color="green"></tw-tag>,<tw-tag name="dorm" color="blue"></tw-tag>,<tw-tag name="hallway" color="yellow"></tw-tag><tw-passagedata pid="1" name="New Welcome" tags="" position="50,175" size="100,100">(set: $surveyLink to &quot; http://cmu.ca1.qualtrics.com/jfe/form/SV_4YqKtbgVmtbZiyV&quot;) 
 
 &lt;!--
 Set all variables you wish to send to survey at start of story.
@@ -129,7 +133,7 @@ The sound of the *crunch crunch crunch* paired with upbeat chatter gets you exci
 You pass some friendly faces and give a few nods. A group standing outside a bookstore waves at you and one of them yells, &quot;Hey Sam! What&#39;s up?&quot;
 
 [[Smile and wave -&gt; Smile and Wave]]
-[[Shout a greeting back -&gt; Shout Greeting]]
+[[Stop and chat for a minute -&gt; Shout Greeting]]
 
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="3" name=" Smile and Wave" tags="campus" position="475,125" size="100,100">&lt;div class = &quot;box&quot;&gt;
 
@@ -173,7 +177,7 @@ Morgan glances up, “Hey Sam! What&#39;s going on?&quot;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="7" name=" Lab Mates" tags="dorm" position="1100,400" size="100,100">&lt;div class = &quot;box&quot;&gt;
 “Oh yeah, I know Ashley and Luis from intramural. But I don&#39;t think I&#39;ve met Mia,” he stares up at the ceiling, puzzling.
 
-“Yeah, I think she spends a lot of time over in the Engineering school so you probably wouldn’t see her around the multicultural center.” 
+“Yeah, I think she spends a lot of time over in the Engineering school.” 
 
 “Yeah this is a big school,&quot; he replies looking back at you, &quot;I’m not surprised.”
 
@@ -242,7 +246,9 @@ Professor Smith gestures, “I would like for everyone to meet Dr. Avery! She ha
 	(set: $drink to &quot;water&quot;)\
 	(go-to: &quot;Get Drink&quot;)\
 	]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="Get Drink" tags="cafe" position="2200,650" size="100,100">&lt;div class = &quot;box&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="Get Drink" tags="cafe" position="2200,650" size="100,100">(set: $surveyLink to it + &quot;&amp;drink=&quot; + (text:$drink))
+
+&lt;div class = &quot;box&quot;&gt;
 &quot;Could I get a $drink?&quot;
 
 “Of course! I’ll be right back” Prof. Smith stands up and heads for the counter. There wasn&#39;t much of a line and he quickly returns and hands you your drink. 
@@ -278,7 +284,7 @@ Professor Smith beams. “That is wonderful! There are so many opportunities wit
 
 “I actually plan to take a little break from academics. I’ve always planned on traveling for a bit and I want to take the opportunity to think about what I plan to spend the rest of my life doing.” 
 
-Prof. Smith smiles. “How exciting! Not many have the courage to decide something so major. I think the uniersity even has some programs for going abroad if you wanted to start while you&#39;re here. And in the future when you&#39;re ready, I&#39;d be glad to help in figuring out next steps.” 
+Prof. Smith smiles. “How exciting! Not many have the courage to decide something so major. I think the university even has some programs for going abroad if you wanted to start while you&#39;re here. And in the future when you&#39;re ready, I&#39;d be glad to help in figuring out next steps.” 
 
 [[&quot;That would be great!&quot; -&gt;Avery Articulate]] 
 [[Take notes -&gt;Avery Articulate]] 
@@ -373,7 +379,9 @@ Morgan laughs, &quot;What do you mean, this is great!&quot;
 You try not to grimace, and begin working around Morgan to throw together a sandwich.
 
 [[Eat your sandwich -&gt; Enjoy lunch]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="27" name=" Enjoy lunch" tags="dorm" position="1850,400" size="100,100">&lt;div class = &quot;box&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="27" name=" Enjoy lunch" tags="dorm" position="1850,400" size="100,100">(set: $surveyLink to it + &quot;?lunch=&quot; + (text:$lunch))
+
+&lt;div class = &quot;box&quot;&gt;
 You splay out on the couch, $lunch in one hand, phone in the other. 
 
 You see a couple of notifications from the lab group chat. Looks like Luis forwarded some article about bias in admissions, but it&#39;s already been buried in gifs and memes from Ashley and Mia. 
@@ -438,7 +446,9 @@ Professor Smith grabs the placard and starts reading it. &quot;Go on, sorry let 
 	(set: $home to &quot;the Bay Area&quot;)\
 	(go-to: &quot;Explain Alarm&quot;)\
 	]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="Explain Alarm" tags="cafe alarm" position="3200,650" size="100,100">&lt;div class = &quot;box&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="Explain Alarm" tags="cafe alarm" position="3200,650" size="100,100">(set: $surveyLink to it + &quot;&amp;home=&quot; + (text:$home))
+
+&lt;div class = &quot;box&quot;&gt;
 &quot;Oh, I&#39;m from $home,&quot; you shout over the sound of the alarm.
 
 &quot;Hm,&quot; she ponders, &quot;how about your parents? Where are they from?&quot; Dr. Avery continues, though she has to lean toward you and shout to be heard. 
@@ -447,7 +457,7 @@ Professor Smith grabs the placard and starts reading it. &quot;Go on, sorry let 
 &lt;/div&gt;
 “Ugh, sorry, Avery, I think this alarm is directed at you.” Professor Smith clears his throat and looks apologetic. “It’s a system the university has installed. It is to detect racist speech and microaggressions.”
 
-Dr. Avery is shocked, and the alarm continues. Others in the cafe are turning to stare. The blare of the alarm can be heard across the room now. 
+Dr. Avery looks shocked. Others in the cafe are turning to stare. The blare of the alarm can be heard across the room now. 
 &lt;div class=&quot;alarm&quot;&gt;
 *BWAAAAP BWAAAAP BWAAAAAAAAP*
 &lt;/div&gt;
@@ -456,11 +466,12 @@ Dr. Avery is shocked, and the alarm continues. Others in the cafe are turning to
 [[Shrug -&gt;Shrug]]
 [[Defer to Prof Smith -&gt;Defer to Smith]]
 [[Suggest it&#39;s broken -&gt;Broken]]
-[[Being called &quot;articulate&quot; -&gt;Explain Articulate]]
-[[Being asked &quot;where you&#39;re from&quot; -&gt;Explain Where From]]
-[[Being complimented on &quot;good English&quot; -&gt;Explain Good English]]
+[[Explain what bothered you -&gt;Explain Bother]]
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="Avery Agree" tags="cafe" position="3900,525" size="100,100">&lt;div class = &quot;box&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="Avery Agree" tags="cafe" position="3900,525" size="100,100">(set: $averyNice to &quot;agree&quot;)
+(set: $surveyLink to it + &quot;&amp;averyNice=&quot; + (text:$averyNice))
+
+&lt;div class = &quot;box&quot;&gt;
 &quot;Yeah, she certainly seems interested in us.&quot;
 
 After Professor Smith and Dr. Avery return, the rest of the meeting goes by fairly quickly. 
@@ -471,7 +482,10 @@ You learn Mia is going to be using her degree to help with her family business, 
 [[Bring up summer internships-&gt;Summer Internships]]
 [[Stay quiet for the rest of the meeting-&gt;Stay Quiet]]
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="Avery Disagree" tags="cafe" position="3900,650" size="100,100">&lt;div class = &quot;box&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="Avery Disagree" tags="cafe" position="3900,650" size="100,100">(set: $averyNice to &quot;disagree&quot;)
+(set: $surveyLink to it + &quot;&amp;averyNice=&quot; + (text:$averyNice))
+
+&lt;div class = &quot;box&quot;&gt;
 &quot;I don&#39;t know about that. That was a lot.&quot;
 
 After Professor Smith and Dr. Avery return, the rest of the meeting goes by fairly quickly. 
@@ -482,7 +496,10 @@ You learn Mia is going to be using her degree to help with her family business, 
 [[Bring up summer internships-&gt;Summer Internships]]
 [[Stay quiet for the rest of the meeting-&gt;Stay Quiet]]
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="35" name="Avery Say Nothing" tags="cafe" position="3900,775" size="100,100">&lt;div class = &quot;box&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="35" name="Avery Say Nothing" tags="cafe" position="3900,775" size="100,100">(set: $averyNice to &quot;avoid&quot;)
+(set: $surveyLink to it + &quot;&amp;averyNice=&quot; + (text:$averyNice))
+
+&lt;div class = &quot;box&quot;&gt;
 You shrug and check your phone.
 
 After Professor Smith and Dr. Avery return, the rest of the meeting goes by fairly quickly. 
@@ -493,7 +510,10 @@ You learn Mia is going to be using her degree to help with her family business, 
 [[Bring up summer internships-&gt;Summer Internships]]
 [[Stay quiet for the rest of the meeting-&gt;Stay Quiet]]
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="36" name="Casual Chat" tags="cafe" position="4100,525" size="100,100">&lt;div class = &quot;box&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="36" name="Casual Chat" tags="cafe" position="4100,525" size="100,100">(set: $conversation to &quot;casual&quot;)
+(set: $surveyLink to it + &quot;&amp;conversation=&quot; + (text:$conversation))
+
+&lt;div class = &quot;box&quot;&gt;
 Everyone breaks out into side conversations. You and Ashley chat a bit about your upcoming Thanksgiving plans. She’s going to be heading home to New York. 
 
 Dr. Avery looks down at her watch and raises her eyebrows. 
@@ -505,7 +525,10 @@ Professor Smith says a quick goodbye to you all, &quot;I&#39;ll see you all in l
 [[Gulp down your drink -&gt;Finish Drink]]
 [[Toss out your drink -&gt;Finish Drink]]
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="Summer Internships" tags="cafe" position="4100,650" size="100,100">&lt;div class = &quot;box&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="Summer Internships" tags="cafe" position="4100,650" size="100,100">(set: $conversation to &quot;internship&quot;)
+(set: $surveyLink to it + &quot;&amp;conversation=&quot; + (text:$conversation))
+
+&lt;div class = &quot;box&quot;&gt;
 You talk to Dr. Avery about how you are hoping to get an internship at the company she worked at previously. She offers to review your resume and cover letter for you before you turn in your application.
 
 Dr. Avery looks down at her watch and raises her eyebrows. 
@@ -517,7 +540,10 @@ Professor Smith says a quick goodbye to you all, &quot;I&#39;ll see you all in l
 [[Gulp down your drink -&gt;Finish Drink]]
 [[Toss out your drink -&gt;Finish Drink]]
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="Stay Quiet" tags="cafe" position="4100,775" size="100,100">&lt;div class = &quot;box&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="38" name="Stay Quiet" tags="cafe" position="4100,775" size="100,100">(set: $conversation to &quot;quiet&quot;)
+(set: $surveyLink to it + &quot;&amp;conversation=&quot; + (text:$conversation))
+
+&lt;div class = &quot;box&quot;&gt;
 Everyone breaks out into side conversations. You listen in here and there but don’t really engage much.
 
 Dr. Avery looks down at her watch and raises her eyebrows. 
@@ -547,7 +573,10 @@ Ashley turns to you.
 [[Express concern -&gt;Concerned]]
 [[Avoid the question -&gt;Avoid]]
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="41" name="Satisfied" tags="bus" position="4550,523" size="100,100">&lt;div class = &quot;box&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="41" name="Satisfied" tags="bus" position="4550,525" size="100,100">(set: $opinion to &quot;satisfied&quot;)
+(set: $surveyLink to it + &quot;&amp;opinion=&quot; + (text:$opinion))
+
+&lt;div class = &quot;box&quot;&gt;
 &quot;Yeah that was cool. It was nice she was so interested in our careers.&quot;
 
 “Yeah! Oh shoot, my bus is here, are you taking this one too?&quot; she asks.
@@ -560,7 +589,10 @@ Ashley smiles and waves to you, and you can see your bus just pulling up behind 
 
 [[Head home-&gt;Return home]]
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="Concerned" tags="bus" position="4550,650" size="100,100">&lt;div class = &quot;box&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="Concerned" tags="bus" position="4550,650" size="100,100">(set: $opinion to &quot;concerned&quot;)
+(set: $surveyLink to it + &quot;&amp;opinion=&quot; + (text:$opinion))
+
+&lt;div class = &quot;box&quot;&gt;
 &quot;Yeah I don&#39;t know, it was a little weird.&quot; 
 
 “Huh, yeah it did get a little weird. Oh that&#39;s my bus, are you taking this one too?&quot; she asks.
@@ -573,7 +605,10 @@ Ashley smiles and waves to you, and you can see your bus just pulling up behind 
 
 [[Head home-&gt;Return home]]
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="43" name="Avoid" tags="bus" position="4550,775" size="100,100">&lt;div class = &quot;box&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="43" name="Avoid" tags="bus" position="4550,775" size="100,100">(set: $opinion to &quot;avoid&quot;)
+(set: $surveyLink to it + &quot;&amp;opinion=&quot; + (text:$opinion))
+
+&lt;div class = &quot;box&quot;&gt;
 &quot;Oh yeah I don&#39;t know. Same for me.&quot; 
 
 “Oh shoot, my bus is here, are you taking this one too?&quot; she asks.
@@ -593,103 +628,99 @@ It was a pretty busy day and you still have hours of homework tonight and a test
 
 [[Take a nap-&gt;END]]
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="45" name="Shrug" tags="cafe alarm" position="3425,350" size="100,100">&lt;div class = &quot;box&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="45" name="Shrug" tags="cafe alarm" position="3425,475" size="100,100">(set: $alarmResponse to &quot;shrug&quot;)
+(set: $surveyLink to it + &quot;&amp;alarmResponse=&quot; + (text:$alarmResponse))
+
+&lt;div class = &quot;box&quot;&gt;
 &quot;Oh yeah I&#39;m not sure.&quot; 
 &lt;div class=&quot;alarm&quot;&gt;
 *BWAAAAP BWAAAAP BWAAAAAAAAP*
 &lt;/div&gt;
-&quot;Well give it a try,&quot; says Professor Smith to Dr. Avery, &quot;press your hand on the sensor at the top and see if it will go off.”
-
-Dr. Avery tentatively reaches out her hand and covers the blinking light. It quiets. Everyone breathes a sigh of relief. 
-
-A strip of paper is being printed out. Dr. Avery looks at the others at the table and then slowly grasps the paper. She reads it out loud. “‘You have committed a racial microaggression.’ What is that?” She pauses and looks up. 
-
-Dr. Avery continues to read, “When you compliment someone on their English, or tell them they are articulate, without knowing their background, you have assumed something about them based on the way that they look.” She stops reading. “But I was just trying to be nice!”
-
-[[Smile encouragingly -&gt;Interjection]]
-[[Look down -&gt;Interjection]]
-
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="46" name="Explain Articulate" tags="cafe alarm" position="3425,725" size="100,100">&lt;div class = &quot;box&quot;&gt;
-&quot;Oh, well it might have been about using &#39;articulate&#39; as a compliment.&quot;
+&quot;We&#39;re ok!&quot; shouts Professor Smith to the device, grasping the placard, &quot;I&#39;m sorry!!&quot; 
 &lt;div class=&quot;alarm&quot;&gt;
 *BWAAAAP BWAAAAP BWAAAAAAAAP*
 &lt;/div&gt;
-&quot;Well give it a try,&quot; says Professor Smith to Dr. Avery, &quot;press your hand on the sensor at the top and see if it will go off.”
+&quot;Hmm,&quot; Professor Smith turns to Dr. Avery, &quot;the card says an apology from the person who triggered it will turn it off. Can you give it a try?”
 
-Dr. Avery tentatively reaches out her hand and covers the blinking light. It quiets. Everyone breathes a sigh of relief. 
+Dr. Avery tentatively leans forward and says, &quot;I&#39;m sorry.&quot; It quiets. Everyone breathes a sigh of relief. 
 
 A strip of paper is being printed out. Dr. Avery looks at the others at the table and then slowly grasps the paper. She reads it out loud. “‘You have committed a racial microaggression.’ What is that?” She pauses and looks up. 
 
-Dr. Avery continues to read, “When you compliment someone on their English, or tell them they are articulate, without knowing their background, you have assumed something about them based on the way that they look.” She stops reading. “But I was just trying to be nice!”
+Dr. Avery continues to read, “When you compliment someone on their English, or tell them they are articulate, without knowing their background, you have assumed something about them based on the way that they look.” She stops reading. “Oh, I was just trying to make conversation!”
 
 [[Smile encouragingly -&gt;Interjection]]
 [[Look down -&gt;Interjection]]
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="Explain Where From" tags="cafe alarm" position="3425,850" size="100,100">&lt;div class = &quot;box&quot;&gt;
-&quot;Oh, well it might have been about asking me and my parents are from?&quot;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="46" name="Explain Bother" tags="cafe alarm" position="3425,850" size="100,100">(set: $alarmResponse to &quot;explain&quot;)
+(set: $surveyLink to it + &quot;&amp;alarmResponse=&quot; + (text:$alarmResponse))
+
+&lt;div class = &quot;box&quot;&gt;
+You explain to her what bothered you. 
 &lt;div class=&quot;alarm&quot;&gt;
 *BWAAAAP BWAAAAP BWAAAAAAAAP*
 &lt;/div&gt;
-&quot;Well give it a try,&quot; says Professor Smith to Dr. Avery, &quot;press your hand on the sensor at the top and see if it will go off.”
-
-Dr. Avery tentatively reaches out her hand and covers the blinking light. It quiets. Everyone breathes a sigh of relief. 
-
-A strip of paper is being printed out. Dr. Avery looks at the others at the table and then slowly grasps the paper. She reads it out loud. “‘You have committed a racial microaggression.’ What is that?” She pauses and looks up. 
-
-Dr. Avery continues to read, “When you compliment someone on their English, or tell them they are articulate, without knowing their background, you have assumed something about them based on the way that they look.” She stops reading. “But I was just trying to be nice!”
-
-[[Smile encouragingly -&gt;Interjection]]
-[[Look down -&gt;Interjection]]
-
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="Explain Good English" tags="cafe alarm" position="3425,975" size="100,100">&lt;div class = &quot;box&quot;&gt;
-&quot;Oh, well it might have been about complimenting my English?&quot;
+&quot;We&#39;re ok!&quot; shouts Professor Smith to the device, grasping the placard, &quot;I&#39;m sorry!!&quot; 
 &lt;div class=&quot;alarm&quot;&gt;
 *BWAAAAP BWAAAAP BWAAAAAAAAP*
 &lt;/div&gt;
-&quot;Well give it a try,&quot; says Professor Smith to Dr. Avery, &quot;press your hand on the sensor at the top and see if it will go off.”
+&quot;Hmm,&quot; Professor Smith turns to Dr. Avery, &quot;the card says an apology from the person who triggered it will turn it off. Can you give it a try?”
 
-Dr. Avery tentatively reaches out her hand and covers the blinking light. It quiets. Everyone breathes a sigh of relief. 
+Dr. Avery tentatively leans forward and says, &quot;I&#39;m sorry.&quot; It quiets. Everyone breathes a sigh of relief. 
 
 A strip of paper is being printed out. Dr. Avery looks at the others at the table and then slowly grasps the paper. She reads it out loud. “‘You have committed a racial microaggression.’ What is that?” She pauses and looks up. 
 
-Dr. Avery continues to read, “When you compliment someone on their English, or tell them they are articulate, without knowing their background, you have assumed something about them based on the way that they look.” She stops reading. “But I was just trying to be nice!”
+Dr. Avery continues to read, “When you compliment someone on their English, or tell them they are articulate, without knowing their background, you have assumed something about them based on the way that they look.” She stops reading. “Oh, I was just trying to make conversation!”
 
 [[Smile encouragingly -&gt;Interjection]]
 [[Look down -&gt;Interjection]]
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="Defer to Smith" tags="cafe alarm" position="3425,475" size="100,100">&lt;div class = &quot;box&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="Defer to Smith" tags="cafe alarm" position="3425,600" size="100,100">(set: $alarmResponse to &quot;defer&quot;)
+(set: $surveyLink to it + &quot;&amp;alarmResponse=&quot; + (text:$alarmResponse))
+
+&lt;div class = &quot;box&quot;&gt;
 You glance at Professor Smith. &quot;What does the placard say?&quot;
 &lt;div class=&quot;alarm&quot;&gt;
 *BWAAAAP BWAAAAP BWAAAAAAAAP*
 &lt;/div&gt;
-&quot;Well give it a try,&quot; says Professor Smith to Dr. Avery, &quot;press your hand on the sensor at the top and see if it will go off.”
+&quot;We&#39;re ok!&quot; shouts Professor Smith to the device, grasping the placard, &quot;I&#39;m sorry!!&quot; 
+&lt;div class=&quot;alarm&quot;&gt;
+*BWAAAAP BWAAAAP BWAAAAAAAAP*
+&lt;/div&gt;
+&quot;Hmm,&quot; Professor Smith turns to Dr. Avery, &quot;the card says an apology from the person who triggered it will turn it off. Can you give it a try?”
 
-Dr. Avery tentatively reaches out her hand and covers the blinking light. It quiets. Everyone breathes a sigh of relief. 
+Dr. Avery tentatively leans forward and says, &quot;I&#39;m sorry.&quot; It quiets. Everyone breathes a sigh of relief. 
 
 A strip of paper is being printed out. Dr. Avery looks at the others at the table and then slowly grasps the paper. She reads it out loud. “‘You have committed a racial microaggression.’ What is that?” She pauses and looks up. 
 
-Dr. Avery continues to read, “When you compliment someone on their English, or tell them they are articulate, without knowing their background, you have assumed something about them based on the way that they look.” She stops reading. “But I was just trying to be nice!”
+Dr. Avery continues to read, “When you compliment someone on their English, or tell them they are articulate, without knowing their background, you have assumed something about them based on the way that they look.” She stops reading. “Oh, I was just trying to make conversation!”
 
 [[Smile encouragingly -&gt;Interjection]]
 [[Look down -&gt;Interjection]]
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="Broken" tags="cafe alarm" position="3425,600" size="100,100">&lt;div class = &quot;box&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="Broken" tags="cafe alarm" position="3425,725" size="100,100">(set: $alarmResponse to &quot;broken&quot;)
+(set: $surveyLink to it + &quot;&amp;alarmResponse=&quot; + (text:$alarmResponse))
+
+&lt;div class = &quot;box&quot;&gt;
 &quot;Oh, well maybe it&#39;s broken.&quot;
 &lt;div class=&quot;alarm&quot;&gt;
 *BWAAAAP BWAAAAP BWAAAAAAAAP*
 &lt;/div&gt;
-&quot;Well give it a try,&quot; says Professor Smith to Dr. Avery, &quot;press your hand on the sensor at the top and see if it will go off.”
+&quot;We&#39;re ok!&quot; shouts Professor Smith to the device, grasping the placard, &quot;I&#39;m sorry!!&quot; 
+&lt;div class=&quot;alarm&quot;&gt;
+*BWAAAAP BWAAAAP BWAAAAAAAAP*
+&lt;/div&gt;
+&quot;Hmm,&quot; Professor Smith turns to Dr. Avery, &quot;the card says an apology from the person who triggered it will turn it off. Can you give it a try?”
 
-Dr. Avery tentatively reaches out her hand and covers the blinking light. It quiets. Everyone breathes a sigh of relief. 
+Dr. Avery tentatively leans forward and says, &quot;I&#39;m sorry.&quot; It quiets. Everyone breathes a sigh of relief. 
 
 A strip of paper is being printed out. Dr. Avery looks at the others at the table and then slowly grasps the paper. She reads it out loud. “‘You have committed a racial microaggression.’ What is that?” She pauses and looks up. 
 
-Dr. Avery continues to read, “When you compliment someone on their English, or tell them they are articulate, without knowing their background, you have assumed something about them based on the way that they look.” She stops reading. “But I was just trying to be nice!”
+Dr. Avery continues to read, “When you compliment someone on their English, or tell them they are articulate, without knowing their background, you have assumed something about them based on the way that they look.” She stops reading. “Oh, I was just trying to make conversation!”
 
 [[Smile encouragingly -&gt;Interjection]]
 [[Look down -&gt;Interjection]]
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="Interjection" tags="cafe alarm" position="3700,650" size="100,100">&lt;div class = &quot;box&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="Interjection" tags="cafe alarm" position="3700,650" size="100,100">&lt;div class = &quot;box&quot;&gt;
 
 Dr. Avery reads the rest of the information in silence.
 
@@ -699,7 +730,7 @@ Dr. Avery reads the rest of the information in silence.
 
 Professor Smith and Dr. Avery leave to get refills. 
 
-Luis says, “Wow that was really awkward, but gosh, Dr. Avery seems so nice doesn’t she? I’m still excited to get to talk to her more.” 
+Luis says, “Wow that was really awkward, but gosh, Dr. Avery seems so helpful doesn’t she? I’m still excited to get to talk to her more.” 
 
 [[Agree -&gt;Avery Agree]] 
 [[Disagree -&gt;Avery Disagree]] 
